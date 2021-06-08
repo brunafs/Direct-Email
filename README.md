@@ -1,6 +1,6 @@
 # Direct-Email (Mala Direta)
 
-Sistema, criado para o TCDF, de envio de documentos/boletins.
+Sistema, criado para o TCDF (Tribunal de Contas do DF), de envio de documentos/boletins.
 
 É uma aplicação que realiza o cadastro de pessoas interessadas em receber os Boletins da Jurisprudência, como também o cadastro desses boletins (documentos).
 
