@@ -1,0 +1,55 @@
+header {
+   padding: 80px 0 20px;
+   background-color: #00497F;
+}
+
+section {
+padding: 30px 0;
+}
+
+textarea {
+   margin-top: 7px;
+}
+
+.error {
+   color: red !important;
+}
+
+.sucess {
+   color: green !important;
+}
+
+span .boletim {
+
+}
+
+.field-sucess {
+   font-size: 18px;
+   color: green !important;
+}
+
+.text-lead{
+   font-weight: 350;
+}
+
+.botao {
+	padding: 5px 10px 5px 10px;
+   font-size: 17px;
+}
+
+/* validações */
+#msg {
+   color:red;
+ }
+
+ el.error{
+   background-color: red;
+ }
+
+ el.ok {
+   color: green;
+ }
+
+ .field-error {
+   border-color: #f00 !important;
+ }

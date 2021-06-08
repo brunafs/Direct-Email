@@ -1,0 +1,55 @@
+--> BANCO DE DADOS: boletim
+
+TABELAS:
+   Usuário:
+      id, nome, email
+   Perfil:
+      id, assunto, descricao
+    Usuario_Perfil:
+      id, idUsuario (FK), idPerfil (FK)
+   Arquivo:
+      id, nome_doc, descricao, arquivo(path), perfil (FK)
+
+--> SQL SCRIPT:
+
+CREATE DATABASE Boletins;
+
+USE Boletins;
+
+CREATE TABLE perfil (
+	`id` INT NOT NULL AUTO_INCREMENT,
+    `assunto` VARCHAR(45) NOT NULL,
+    `descricao` VARCHAR(255),
+    PRIMARY KEY (`id`),
+	constraint UK_assuntounique unique (assunto)
+);
+
+CREATE TABLE usuario (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `nome` VARCHAR(45) NOT NULL,
+  `email` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`),
+  constraint UK_email unique (email)
+);
+
+CREATE TABLE usuarioPerfil (
+	  `id` INT NOT NULL AUTO_INCREMENT,
+      `idUsuario`INT NOT NULL,
+      `idPerfil` INT NOT NULL,
+      PRIMARY KEY (`id`),
+      FOREIGN KEY (idUsuario) REFERENCES usuario(id),
+      FOREIGN KEY (idPerfil) REFERENCES perfil(id),
+      CONSTRAINT UK_perfis UNIQUE (idUsuario, idPerfil)
+);
+
+CREATE TABLE arquivo (
+	`id` INT NOT NULL AUTO_INCREMENT,
+    `nome_doc` VARCHAR(255) NOT NULL,
+    `descricao` VARCHAR(255),
+    `caminho` VARCHAR(255) NOT NULL,
+    `perfil` INT NOT NULL,
+    `status` BIT NOT NULL DEFAULT 0,
+    PRIMARY KEY (`id`),
+    constraint UK_documento unique (nome_doc),
+    FOREIGN KEY (perfil) REFERENCES perfil(id)
+);
